@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#244d3e"><meta name="description" content="Tantang komputer, bermain bersama teman, dan pelajari setiap langkah."><title>Ruang Catur — Setiap langkah berarti.</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><a class="brand" href="./"><span class="brand-mark">♞</span>ruang<span>catur</span><b>.</b></a><span class="header-note">SEBUAH RUANG UNTUK BERPIKIR</span><button id="soundBtn" class="icon-button" aria-label="Aktifkan suara" aria-pressed="false">♪ <span>Suara mati</span></button></header>
+<main class="workspace">
+<section class="intro"><div><p class="eyebrow"><i></i> MAIN, PIKIRKAN, BERKEMBANG</p><h1>Langkah kecil.<br class="mobile-break"> Strategi besar.</h1><p class="subtitle">Ambil tempatmu. Permainan yang baik dimulai dari satu langkah.</p></div><div class="intro-decoration" aria-hidden="true">♜ <span>♞</span></div></section>
+<div class="game-layout">
+<section class="play-area" aria-label="Area permainan">
+<div class="player-card" id="blackPlayer"><div class="avatar dark-avatar">♚</div><div class="player-name"><strong id="blackName">Komputer</strong><span>Bidak hitam <span id="blackScore" class="material"></span></span></div><div class="captured" id="capturedBlack" aria-label="Bidak yang ditangkap Hitam"></div><span class="player-state" id="blackState">MENUNGGU</span></div>
+<div class="board-frame"><div id="board" class="board" role="group" aria-label="Papan catur"></div></div>
+<div class="player-card" id="whitePlayer"><div class="avatar white-avatar">♔</div><div class="player-name"><strong id="whiteName">Kamu</strong><span>Bidak putih <span id="whiteScore" class="material"></span></span></div><div class="captured" id="capturedWhite" aria-label="Bidak yang ditangkap Putih"></div><span class="player-state" id="whiteState">GILIRANMU</span></div>
+<div class="board-toolbar"><span><i class="live-dot"></i> <span id="saveStatus">Tersimpan di perangkat ini</span></span><button id="flipBtn" class="text-button">⇅ <span>Balik papan</span></button></div>
+</section>
+<aside class="sidebar">
+<section class="panel settings-panel"><div class="panel-heading"><h2>Ruang bermain</h2><span class="small-tag">KLASIK</span></div><label for="gameMode">Pilih lawan</label><div class="select-wrap"><select id="gameMode"><option value="computer">Lawan komputer</option><option value="local">Bersama teman</option><option value="auto">Komputer vs komputer</option></select></div><div id="difficultyGroup"><label for="difficulty">Tingkat kesulitan</label><div class="select-wrap"><select id="difficulty"><option value="1">Santai · Pemula</option><option value="2" selected>Seimbang · Menengah</option><option value="3">Menantang · Lanjutan</option></select></div></div><button id="resetBtn" class="primary-button"><span>＋</span> Permainan baru</button><div class="settings-foot"><span>Tanpa batas waktu</span><span>♙ Standar</span></div></section>
+<section class="panel history-panel"><div class="panel-heading"><h2>Riwayat langkah</h2><span id="moveCount" class="count-badge">0</span></div><div class="history-columns"><span>#</span><span>PUTIH</span><span>HITAM</span></div><div id="moveList" class="move-list" aria-label="Riwayat langkah"></div><div class="history-actions"><button id="undoBtn" class="secondary-button" disabled>↶ Urungkan</button><button id="exportBtn" class="secondary-button" disabled>↓ PGN</button></div></section>
+<div class="status-card" role="status" aria-live="polite"><span id="statusIcon" class="status-icon">✦</span><div><strong id="currentTurn">Giliran putih</strong><p id="statusDetail">Pilih bidak untuk melihat langkah yang tersedia.</p></div></div>
+<details class="help"><summary>Cara bermain <span>＋</span></summary><p>Klik bidak, lalu pilih titik untuk bergerak. Lingkaran menandai tangkapan. Lindungi rajamu dan skakmat lawan untuk menang.</p><p>Rokade, en passant, dan empat pilihan promosi tersedia. Gunakan tombol panah untuk menjelajahi papan, Enter untuk memilih, dan Escape untuk membatalkan pilihan.</p></details>
+</aside></div>
+<footer><span>Permainan klasik. Perspektif baru.</span><span>DIRANCANG UNTUK SETIAP LANGKAH <b>✦</b></span></footer>
+</main>
+<dialog id="promotionDialog"><p class="eyebrow">SATU LANGKAH LEBIH JAUH</p><h2>Promosikan pionmu.</h2><p>Pilih bidak untuk melanjutkan permainan.</p><div id="promotionOptions" class="promotion-options"></div></dialog>
+<dialog id="newGameDialog"><p class="eyebrow">MULAI DARI AWAL</p><h2>Siap untuk permainan baru?</h2><p>Permainan saat ini akan diganti.</p><div class="dialog-actions"><button id="cancelReset" class="secondary-button">Lanjut bermain</button><button id="confirmReset" class="primary-button">Mulai baru</button></div></dialog>
+<script src="engine.js"></script><script src="script.js"></script>
+</body></html>

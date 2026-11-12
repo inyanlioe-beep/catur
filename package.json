@@ -1,0 +1,11 @@
+{
+  "name": "ruang-catur",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Game catur lokal dengan tiga mode permainan dan AI tanpa dependensi.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/engine.test.js",
+    "test:browser": "node tests/browser.cjs"
+  }
+}
