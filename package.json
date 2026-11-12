@@ -4,6 +4,7 @@
   "private": true,
   "description": "Game catur lokal dengan tiga mode permainan dan AI tanpa dependensi.",
   "scripts": {
+    "build": "node scripts/build.js",
     "start": "node server.js",
     "test": "node --test tests/engine.test.js",
     "test:browser": "node tests/browser.cjs"

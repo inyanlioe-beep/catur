@@ -14,6 +14,17 @@ Buka **http://localhost:3000**. Di PowerShell yang membatasi skrip, gunakan `npm
 
 `index.html` juga bisa dibuka langsung. Server lokal direkomendasikan agar AI berjalan di Web Worker; pembukaan langsung memakai perhitungan AI di halaman sebagai cadangan.
 
+## Deploy ke Vercel
+
+Konfigurasi `vercel.json` menerbitkan game sebagai situs statis. `npm run build` menyalin HTML, CSS, JavaScript, dan Web Worker AI ke `dist/`; server Node lokal tidak diperlukan di hosting.
+
+1. Push proyek beserta `vercel.json` dan `scripts/build.js` ke repositori yang terhubung ke Vercel.
+2. Pastikan **Root Directory** menunjuk folder yang berisi `package.json`, `index.html`, dan `vercel.json`. Jika ketiganya berada di akar repositori, biarkan pengaturan ini pada default.
+3. Gunakan **Framework Preset: Other**, **Build Command: npm run build**, dan **Output Directory: dist**. Dua pengaturan terakhir juga ditetapkan oleh `vercel.json`.
+4. Deploy ulang setelah perubahan masuk. Jangan gunakan `npm start` sebagai Build Command.
+
+Untuk memeriksa output secara lokal, jalankan `npm run build` (atau `npm.cmd run build` di PowerShell).
+
 ## Fitur
 
 - Lawan komputer dengan tiga tingkat, dua pemain lokal, atau komputer melawan komputer.
